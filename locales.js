@@ -1,0 +1,17 @@
+const locale = {
+  uploadTitle: "Upload your PDF file",
+  uploadSubtitle: "Drag and drop your file here or",
+  uploadButton: "Browse files",
+  readyTitle: "Ready to flatten",
+  flattenBtn: "Flatten",
+  backBtn: "Back",
+  processingTitle: "Processing...",
+  processingSubtitle: "Flattening your file, please wait...",
+  doneTitle: "🎉 All done!",
+  doneSubtitle: "Your flattened PDF has been saved as:",
+  downloadLink: "Download PDF",
+  previewLink: "Open in browser",
+  feedbackLabel: "Rate us:",
+  feedbackThanksTitle: "Thank you for your feedback! ❤️",
+  restartBtn: "Start over",
+};

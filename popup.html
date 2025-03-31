@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Flattener</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Step 1: Upload -->
+      <div id="step-1" class="screen active">
+        <h1 id="upload-title">Upload your PDF file</h1>
+
+        <label class="upload-box" id="drop-area">
+          <input type="file" id="file-input" hidden />
+          <div class="upload-content">
+            <p id="upload-subtitle">Drag and drop your file here or</p>
+            <span id="upload-button" class="browse-btn">Browse files</span>
+          </div>
+        </label>
+      </div>
+
+      <!-- Step 2: Preview -->
+      <div class="screen" id="step-2">
+        <h1 id="ready-title"></h1>
+
+        <div class="file-card">
+          <div class="file-left">
+            <img src="assets/pdf-icon.svg" alt="PDF" class="pdf-icon" />
+            <div class="file-meta">
+              <div id="filename">merged.pdf</div>
+              <div id="filesize" class="size-info">PDF 190 KB</div>
+            </div>
+          </div>
+          <button class="file-delete" id="delete-file">❌</button>
+        </div>
+
+        <button class="btn primary" id="flatten-btn"></button>
+      </div>
+
+      <!-- Step 3: Loading -->
+      <div class="screen" id="step-3">
+        <h1 id="processing-title"></h1>
+        <div class="loader"></div>
+        <p id="processing-subtitle"></p>
+      </div>
+
+      <div id="step-4" class="screen">
+        <h1 id="done-title">🎉 All done!</h1>
+        <p id="done-subtitle">Your file has been saved as:</p>
+        <p class="output-filename" id="output-filename">
+          📄 flattened-file.pdf
+        </p>
+
+        <div class="feedback" id="feedback-section">
+          <p id="feedback-label"></p>
+          <div class="feedback-options">
+            <button class="emoji-btn">😕</button>
+            <button class="emoji-btn">😐</button>
+            <button class="emoji-btn">😊</button>
+          </div>
+          <p class="feedback-thanks" id="feedback-thanks" style="display: none">
+            Thank you for your feedback! ❤️
+          </p>
+        </div>
+
+        <a
+          class="btn primary full-width"
+          id="download-link"
+          download
+          style="display: none"
+        ></a>
+        <div class="button-wide-group">
+          <button class="btn secondary full-width" id="restart-btn"></button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <span
+          >Flatten PDF
+          <!-- <a href="mailto:"></a> -->
+        </span>
+        <div class="powered">
+          <span>powered by Chrome</span>
+          <img src="assets/chrome-icon.svg" alt="Chrome" class="chrome-icon" />
+        </div>
+      </footer>
+    </div>
+
+    <script src="pdf-lib.min.js"></script>
+    <script src="locales.js"></script>
+    <script src="api.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
