@@ -36,7 +36,7 @@ function handleFile(selectedFile) {
     filesizeDisplay.textContent = formatBytes(file.size);
     showStep("step2");
   } else {
-    alert("Please upload a valid PDF file.");
+    alert("Please upload a PDF file.");
   }
 }
 
@@ -66,9 +66,13 @@ fileInput.addEventListener("change", (e) => {
 });
 
 dropArea.addEventListener("drop", (e) => {
+  e.preventDefault();
   const droppedFiles = e.dataTransfer.files;
-  if (droppedFiles.length) {
+
+  if (droppedFiles.length && droppedFiles[0].type === "application/pdf") {
     handleFile(droppedFiles[0]);
+  } else {
+    alert("Only PDF files are supported.");
   }
 });
 

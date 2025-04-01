@@ -14,8 +14,7 @@
       "128": "128x128.png"
     }
   },
-  "permissions": [],
-  "host_permissions": ["http://localhost:3000/*"],
+  "permissions": ["tabs"],
   "icons": {
     "16": "16x16.png",
     "32": "32x32.png",
